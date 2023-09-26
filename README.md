@@ -1,5 +1,5 @@
-tui-textarea
-============
+# tui-textarea
+
 [![crate][crates-io-badge]][crate]
 [![docs][doc-badge]][doc]
 [![CI][ci-badge]][ci]
@@ -138,7 +138,7 @@ If you're using [ratatui][] instead of [tui-rs][], you need to enable features f
 shows feature names corresponding to the dependencies.
 
 |         | crossterm                        | termion           | Your own backend       |
-|---------|----------------------------------|-------------------|------------------------|
+| ------- | -------------------------------- | ----------------- | ---------------------- |
 | tui-rs  | `crossterm` (enabled by default) | `termion`         | `your-backend`         |
 | ratatui | `ratatui-crossterm`              | `ratatui-termion` | `ratatui-your-backend` |
 
@@ -206,7 +206,7 @@ key mappings as well.
 Default key mappings are as follows:
 
 | Mappings                                     | Description                               |
-|----------------------------------------------|-------------------------------------------|
+| -------------------------------------------- | ----------------------------------------- |
 | `Ctrl+H`, `Backspace`                        | Delete one character before cursor        |
 | `Ctrl+D`, `Delete`                           | Delete one character next to cursor       |
 | `Ctrl+M`, `Enter`                            | Insert newline                            |
@@ -307,7 +307,7 @@ By default, `TextArea` does now show line numbers. To enable, set a style for re
 color.
 
 ```rust
-use tui::style::{Style, Color};
+use ratatui::style::{Style, Color};
 
 let style = Style::default().bg(Color::DarkGray);
 textarea.set_line_number_style(style);
@@ -320,7 +320,7 @@ is. To change the style of cursor line, use `TextArea::set_cursor_line_style()`.
 cursor line with bold text.
 
 ```rust
-use tui::style::{Style, Modifier};
+use ratatui::style::{Style, Modifier};
 
 let style = Style::default().add_modifier(Modifier::BOLD);
 textarea.set_line_number_style(style);
@@ -329,7 +329,7 @@ textarea.set_line_number_style(style);
 To disable cursor line style, set the default style as follows:
 
 ```rust
-use tui::style::{Style, Modifier};
+use ratatui::style::{Style, Modifier};
 
 textarea.set_line_number_style(Style::default());
 ```
@@ -436,7 +436,7 @@ All editor operations are defined as public methods of `TextArea`. To move curso
 notify how to move the cursor.
 
 | Method                                               | Operation                                       |
-|------------------------------------------------------|-------------------------------------------------|
+| ---------------------------------------------------- | ----------------------------------------------- |
 | `textarea.delete_char()`                             | Delete one character before cursor              |
 | `textarea.delete_next_char()`                        | Delete one character next to cursor             |
 | `textarea.insert_newline()`                          | Insert newline                                  |
